@@ -1,0 +1,82 @@
+{
+  "name": "your-project",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@kaola/kapp-mock": "^1.5.13",
+    "@kapp/addressing": "^0.4.0",
+    "@kapp/core": "^0.3.1",
+    "@kapp/disconf": "^0.3.2",
+    "@kapp/disconf-toolkit": "^0.2.11",
+    "@kapp/grayscale": "^1.0.12",
+    "@kapp/health": "^0.2.0",
+    "@kapp/kafka": "^0.2.0",
+    "@kapp/kagent": "^0.2.0",
+    "@kapp/network": "^0.2.0",
+    "@kapp/openid": "^0.1.0",
+    "@kapp/proxy": "^0.3.3",
+    "@kapp/rate-limiter": "^0.2.0",
+    "@kapp/trace": "^0.2.8",
+    "egg": "^2.22.2",
+    "egg-view-art": "^1.0.3",
+    "egg-zookeeper": "^2.0.0"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@kapp/env": "^0.2.1-1",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "axios": "^0.17.1",
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.1.3",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.13.0",
+    "egg-scripts": "^2.1.0",
+    "eslint": "^4.16.0",
+    "eslint-config-kaola": "^0.1.3",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "rxjs-compat": "^6.5.1",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "egg-scripts": "node ./node_modules/egg-scripts/bin/egg-scripts",
+    "egg-bin": "node ./node_modules/egg-bin/bin/egg-bin",
+    "cross-env": "node ./node_modules/cross-env/dist/bin/cross-env",
+    "start": "npm run egg-scripts -- start --title=your-project",
+    "stop": "npm run egg-scripts -- stop --title=your-project",
+    "debug": "npm run egg-bin -- debug",
+    "dev": "npm run egg-bin -- dev",
+    "test": "npm run egg-bin -- test",
+    "cov": "npm run egg-bin -- cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "postinstall": "npm run env:boot",
+    "env:boot": "kenv boot",
+    "env:switch": "kenv switch"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "egg": {
+    "framework": "@kapp/core"
+  },
+  "author": "KAOLA",
+  "license": "MIT"
+}

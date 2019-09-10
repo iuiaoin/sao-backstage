@@ -1,0 +1,17 @@
+{
+  "extends": "eslint-config-kaola/esnext",
+  "parser": "babel-eslint",
+  "rules": {
+    "camelcase": [
+      2, {
+        "properties": "never"
+      }
+    ],
+    "no-useless-escape": 0
+  },
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  }
+}

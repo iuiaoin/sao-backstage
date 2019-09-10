@@ -1,0 +1,13 @@
+*.log
+npm-debug.log
+yarn-error.log
+node_modules/
+coverage/
+.idea/
+run/
+.DS_Store
+*.sw*
+*.un~
+server/app/public/
+.env
+.env_history
